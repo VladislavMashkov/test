@@ -1,28 +1,27 @@
 #include <iostream>
-
+using namespace std;
 
 struct Node {
-  int data;
-  Node * next;
+    int data;
+    Node* next;
 };
 
-Node * reverse( Node * head ) {
-    Node *tmp = head;
-    Node *t = tmp;
-    while (t->next != 0)
-        t = t->next;
+Node* reverse(Node* head) {
+    if(head == nullptr)
+        return head;
 
-    head = t;
-    while (t != tmp) {
-        t = tmp;
-        while (t->next->next != 0) {
-            t = t->next;
-        }
-        t->next->next = t;
-        t->next = 0;
+    Node* re_head = nullptr;
+
+    while(head != nullptr)
+    {
+        Node* r = head -> next;
+        head -> next = rhead;
+        re_head = head;
+        head = r;
     }
-}
 
+    return rhead;
+}
 
 int main() {
     return 0;
